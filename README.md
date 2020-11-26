@@ -1,5 +1,5 @@
 # BalaGAN: Image Translation Between Imbalanced Domains via Cross-Modal Transfer
-###<a href="https://orpatashnik.github.io/BalaGAN/">Project Page</a> | <a href="https://arxiv.org/abs/2010.02036">Paper</a> | <a href="https://www.youtube.com/watch?v=yNBmY5M8GvE">Video</a>
+### <a href="https://orpatashnik.github.io/BalaGAN/">Project Page</a> | <a href="https://arxiv.org/abs/2010.02036">Paper</a> | <a href="https://www.youtube.com/watch?v=yNBmY5M8GvE">Video</a>
 
 <img src="docs/teaser.gif" width=512 alt="balagan-teaser">
 <img src="docs/img/balagan.png" width=512 alt="balagan">
