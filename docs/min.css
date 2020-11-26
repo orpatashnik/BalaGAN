@@ -2309,8 +2309,8 @@ img {
 }
 
 .link:hover {
-    border-bottom: 1px solid #ffce1a;
-    color: #ffce1a
+    border-bottom: 1px solid #fd3a69;
+    color: #fd3a69
 }
 
 .link.preview {
@@ -3471,7 +3471,7 @@ img {
     /*font-family: 'Open Sans', sans-serif;*/
     font-size: 20px;
     /*color: #4cacdc*/
-    color: #c79d00
+    color: #fd3a69
 }
 
 .grey_container {
@@ -3525,14 +3525,14 @@ img {
 .title {
     margin-top: 0;
     margin-bottom: 0;
-    font-family: 'Lato', sans-serif;
+    font-family: sans-serif;
     /*color: #4d4d4d;*/
     /*color: #18446c;*/
     color: #502da8;
     font-size: 50px;
     line-height: 65px;
     font-weight: 700;
-    letter-spacing: 4px
+    letter-spacing: 0px;
 }
 
 .grey-heading {
@@ -4187,7 +4187,7 @@ img {
 
 @media screen and (max-width: 479px) {
     .p2m_title, .title, .stega_title {
-        letter-spacing: 3vw
+        letter-spacing: 0;
     }
 
     h1 {
@@ -4580,7 +4580,7 @@ img {
   color: #120078 !important;
 }
 .text-primary:hover {
-  color: #c79d00  !important;
+  color: #fd3a69  !important;
   opacity: 1.0;
 }
 
