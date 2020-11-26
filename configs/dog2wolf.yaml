@@ -1,0 +1,61 @@
+# logger options
+logger:
+  eval_every: 1000                            # How often do you want to get output images during training (on both images dir and tensorboard)
+  checkpoint_gan_every: 2500                  # How often do you want to save checkpoints for the translation network
+  checkpoint_modalities_encoder_every: 100    # How often do you want to save checkpoints for the modalities encoder
+  log_loss: 1                                 # How often do you want to log the training stats
+
+# encoder options
+modalities_encoder:
+  epochs: 0                                   # How many epochs to perform when training the encoder
+  batch_size: 256                             # Batch size when training the encoder
+  lr: 0.0003                                  # Learning rate of the encoder
+  out_dim: 256                                # Dimension of the representation that is computed by the projection head
+  color_jitter_strength: 1                    # Strength of the color jittering when color distortion is one of the augmentations
+  weight_decay: 0.000001                      # Weight decay of the encoder
+  loss:
+    temperature: 0.5                          # Temperature for the NTXentLoss
+    use_cosine_similarity: True               # Use cosine similarity in the NTXentLoss
+  augmentations:                              # The augmentations that should be used when training the encoder. The options are: crop, horizontal_flip, shuffle, color_jitter, gray_scale, blur.
+    - crop
+    - horizontal_flip
+    - color_jitter
+    - grayscale
+    - blur
+
+# modalities options
+modalities:                                   # These values should be chosen in corresponding to the imbalancing of the dataset.
+  k_source: 40                                # How many clusters should be in the source domain
+  k_target: 1                                 # How many clusters should be in the target domain
+
+# GAN options
+gan:
+  max_iter: 100000                            # Maximum number of training iterations for the GAN
+  batch_size: 3                               # Batch size for the GAN training
+  weight_decay: 0.0001                        # Weight decay
+  lr_gen: 0.0001                              # Learning rate for the generator
+  lr_dis: 0.0001                              # Learning rate for the discriminator
+  init: kaiming                               # Initialization [gaussian/kaiming/xavier/orthogonal]
+  gan_w: 1                                    # Weight of adversarial loss for image translation
+  fm_w: 1                                     # Weight on distance between gan features of style and translated image
+  r_w: 0.1                                    # Weight of image reconstruction loss
+  gen:
+    nf: 64                                    # number of base filters in the generator
+    n_res_blks: 2                             # number of residual blocks in content encoder/decoder
+    nf_mlp: 256                               # number of base filters in MLP module
+    latent_dim: 64                            # dimension of the latent code for the class model
+    n_mlp_blks: 3                             # number of mlp blocks
+    n_downs_content: 3                        # number of downsampling layers in content encoder
+    n_downs_class: 4                          # number of downsampling layers in class model encoder
+  dis:
+    nf: 64                                    # base number of filters
+    n_res_blks: 10                            # number of residual blocks in the discriminator
+
+# data options
+data:
+  new_size: 140                               # first resize the shortest image side to this size
+  crop_image_height: 128                      # random crop image of this height
+  crop_image_width: 128                       # random crop image of this width
+  train_root: "./datasets/dogs_cats/train"   # root path of the training images
+  test_root: "./datasets/dogs_cats/test"     # root path of the test images
+  num_workers: 0                              # number of workers for all the data loaders
