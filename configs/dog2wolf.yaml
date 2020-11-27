@@ -7,7 +7,7 @@ logger:
 
 # encoder options
 modalities_encoder:
-  epochs: 0                                   # How many epochs to perform when training the encoder
+  epochs: 600                                   # How many epochs to perform when training the encoder
   batch_size: 256                             # Batch size when training the encoder
   lr: 0.0003                                  # Learning rate of the encoder
   out_dim: 256                                # Dimension of the representation that is computed by the projection head
@@ -58,4 +58,4 @@ data:
   crop_image_width: 128                       # random crop image of this width
   train_root: "./datasets/dogs_cats/train"   # root path of the training images
   test_root: "./datasets/dogs_cats/test"     # root path of the test images
-  num_workers: 0                              # number of workers for all the data loaders
+  num_workers: 4                              # number of workers for all the data loaders
